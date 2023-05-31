@@ -13,8 +13,6 @@ function sayHello(name) {
     return `Hello, ${name}!`;
 }
 
-console.log(sayHello("Codeup"));
-
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -36,7 +34,7 @@ console.log(helloMessage);
  * console.
  */
 
-const myName = "Rick"
+const myName = "Rick";
 
 console.log(sayHello(myName));
 
@@ -67,8 +65,6 @@ function isTwo(number){
     return number === 2;
 }
 
-isTwo(random);
-
 console.log(`The random number ${random} is equal to 2? ${isTwo(random)}`);
 
 /**
@@ -84,8 +80,14 @@ console.log(`The random number ${random} is equal to 2? ${isTwo(random)}`);
  */
 
 const calculateTip = (tipPercentage, billTotal) => {
-     return (tipPercentage) * billTotal;
-}
+     return tipPercentage * billTotal;
+};
+
+console.log(calculateTip(0.20, 20));
+console.log(calculateTip(0.25, 25.50));
+console.log(calculateTip(0.15, 33.42));
+
+
 
 /**
  * TODO:
@@ -94,11 +96,11 @@ const calculateTip = (tipPercentage, billTotal) => {
  * then display the dollar amount they should tip
  */
 
-const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?"));
-
+const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?")))/100;
 const userBillTotal = (parseFloat(prompt("How much does your total bill cost?"));
+let userTip = calculateTip(userTipPercentage, userBillTotal);
 
-alert(`You should tip $${userTip.toFixed(2)}`);
+alert(`You should tip $${userTip.toFixed(2)}`)
 
 /**
  * TODO:
