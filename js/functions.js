@@ -10,7 +10,7 @@
  */
 
 function sayHello(name) {
-    return "Hello, " + name + "!"
+    return `Hello, ${name}!`;
 }
 
 console.log(sayHello("Codeup"));
@@ -23,7 +23,9 @@ console.log(sayHello("Codeup"));
  * console.log 'helloMessage' to check your work
  */
 
-let helloMessage = sayHello("Rick");
+//const helloMessaage = sayHello("Rick");
+
+const helloMessage = sayHello("Rick");
 
 console.log(helloMessage);
 
@@ -33,16 +35,15 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+const myName = "Rick"
+
+console.log(sayHello(myName));
+
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 
-let random = Math.floor((Math.random() * 3) + 1);
-
-let myName = "Rick";
-
-let helloName = sayHello(myName);
-
-console.log(helloName);
+const random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -63,12 +64,12 @@ console.log(helloName);
  */
 
 function isTwo(number){
-    return number === 2
+    return number === 2;
 }
 
-let result= isTwo(random)
+isTwo(random);
 
-console.log(result)
+console.log(`The random number ${random} is equal to 2? ${isTwo(random)}`);
 
 /**
  * TODO:
@@ -82,8 +83,8 @@ console.log(result)
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(percent,billAmount){
-    return billAmount * percent
+const calculateTip = (tipPercentage, billTotal) => {
+     return (tipPercentage) * billTotal;
 }
 
 /**
@@ -93,13 +94,11 @@ function calculateTip(percent,billAmount){
  * then display the dollar amount they should tip
  */
 
-let userBillAmount = prompt("How much is your bill?");
+const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?"));
 
-let userTipPrecentage = prompt("What percentage would you like to tip on your bill?");
+const userBillTotal = (parseFloat(prompt("How much does your total bill cost?"));
 
-let userTipAmount = alert("Your total tip amount is " + userBillAmount * (userTipPrecentage/100));
-
-console.log(calculateTip(0.20,20));
+alert(`You should tip $${userTip.toFixed(2)}`);
 
 /**
  * TODO:
@@ -116,8 +115,14 @@ console.log(calculateTip(0.20,20));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(originalPrice, discountPercent){
-    return originalPrice - (originalPrice * discountPercent)
-}
+const applyDiscount = (originalPrice, discountPercentage) => {
+    return originalPrice * (1 - discountPercentage);
+};
 
-console.log(applyDiscount(100, .20))
+console.log(applyDiscount(45.99, 0.12));
+
+// function applyDiscount(originalPrice, discountPercent){
+//     return originalPrice - (originalPrice * discountPercent)
+// }
+//
+// console.log(applyDiscount(100, .20));
