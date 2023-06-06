@@ -34,9 +34,9 @@
 // console.log("Yay! I sold them all!")
 
 
-//#1.2
+// //#1.2
 // function sellMyCones(){
-//     const allCones = Math.floor(Math.random() * 50) + 50;
+//     let allCones = Math.floor(Math.random() * 50) + 50;
 //     console.log(`I have ${allCones} at the start f my day`);
 //     do{
 //         const customerCones = Math.floor(Math.random() * 5) + 1;
