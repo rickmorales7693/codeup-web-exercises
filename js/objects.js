@@ -62,13 +62,18 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    let object = {
+    const person = {
         firstName: "Rick",
-        lastName: "Sanchez",
+        lastName: "Morales",
     }
 
-    console.log(object.firstName) // "Rick"
-    console.log(object.lastName) // "Sanchez"
+    console.log(person.firstName);
+    console.log(person.lastName);
+    // const person = {};
+    // person.firstName = "Rick";
+    // person.lasName = "Morales"
+    //
+    // console.log(person);
 
     /**
      * TODO:
@@ -79,15 +84,18 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    let person = {
-        firstName: "Rick",
-        lasName: "Sanchez",
-        sayHello: function (){
-            return `Hello from ${this.firstName} ${this.lasName}!`
-        }
+    // let person = {
+    //     firstName: "Rick",
+    //     lasName: "Sanchez",
+    //     sayHello: function (){
+    //         return `Hello from ${this.firstName} ${this.lasName}!`
+    //     }
+    // }
+    // console.log(person.sayHello());
+    person.sayHello = function (){
+        return `Hello from ${this.firstName} ${this.lastName}`;
     }
     console.log(person.sayHello());
-
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -113,12 +121,17 @@
         let amountAfterDiscount = shopper.amount;
 
         if (shopper.amount > 200) {
-            discount = shopper.amount * 0.12;
+            discount = shopper.amount * 0.88;
             amountAfterDiscount = shopper.amount - discount;
         }
 
         console.log(`${shopper.name} - Amount before discount: $${amountBeforeDiscount.toFixed(2)}, Discount: $${discount.toFixed(2)}, Amount after discount: $${amountAfterDiscount.toFixed(2)}`);
     });
+
+
+    // shoppers.forEach((shopper) => {
+    //     console.log(`${shopper.name} spent ${shopper.amount}. ${shopper.amount > 200 ? "You got the discount! Your total is: " + shopper.amount * 0.88 : shopper.amount}`)
+    // })
 
 
     /** TODO:
@@ -140,37 +153,45 @@
                 author: {
                     firstName: "Douglas",
                     lastName: "Adams"
-                }
+                },
             },
             {
                 title: "To Kill a Mockingbird",
                 author: {
                     firstName: "Harper",
                     lastName: "Lee"
-                }
+                },
             },
             {
                 title: "The Great Gatsby",
                 author: {
                     firstName: "F. Scott",
                     lastName: "Fitzgerald"
-                }
+                },
             },
             {
                 title: "1984",
                 author: {
                     firstName: "George",
                     lastName: "Orwell"
-                }
+                },
             },
             {
                 title: "Pride and Prejudice",
                 author: {
                     firstName: "Jane",
                     lastName: "Austen"
-                }
-            }
+                },
+            },
         ];
+
+
+    //Another example of array format
+    // let books = [
+    //     {title: "sdfj", author: {firstName: "sdflkkj", lastName: "sdfj"}},
+    //     {title: "sdfjs", author: {firstName: "sdfkjh", lastName: "sdfsdf"}},
+    //
+    // ]
 
     console.log(books[0].title); // "The Salmon of Doubt"
     console.log(books[0].author.firstName); // "Douglas"
@@ -201,16 +222,26 @@
      *      ---
      *      ...
      */
-    for (let i = 0; i < books.length; i++) {
-        let book = books[i];
-        let bookNumber = i + 1;
-        let authorFullName = book.author.firstName + " " + book.author.lastName;
+    // for (let i = 0; i < books.length; i++) {
+    //     let book = books[i];
+    //     let bookNumber = i + 1;
+    //     let authorFullName = book.author.firstName + " " + book.author.lastName;
+    //
+    //     console.log("Book number: " + bookNumber);
+    //     console.log("Book title: " + book.title);
+    //     console.log("Author's full name: " + authorFullName);
+    //     console.log('---');
+    // };
 
-        console.log("Book number: " + bookNumber);
-        console.log("Book title: " + book.title);
-        console.log("Author's full name: " + authorFullName);
-        console.log('---');
-    };
+
+
+    books.forEach((book, index) => {
+        console.log(`Book # ${index + 1}`);
+        console.log(`Title: ${book.title}`);
+        console.log((`Author: ${book.author}`));
+        if(index < books.length - 1)
+            console.log("---");
+    });
 
 
     /**
@@ -223,7 +254,6 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    // Function to create a book object
     function createBook(title, authorName) {
         let names = authorName.split(" ");
         let author = {
@@ -236,7 +266,6 @@
         };
     };
 
-    // Function to display book information
     function showBookInfo(book) {
         let authorFullName = book.author.firstName + " " + book.author.lastName;
 
@@ -245,13 +274,10 @@
         console.log("---");
     };
 
-    // Loop through the books array and display book information using the showBookInfo function
     books.forEach(function(book, index) {
         let bookNumber = index + 1;
 
         console.log("Book number: " + bookNumber);
         showBookInfo(book);
     });
-
-
 })();
