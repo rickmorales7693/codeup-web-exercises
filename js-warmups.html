@@ -51,6 +51,29 @@
             console.log(makeUpperCase(true)); // returns false
             console.log(makeUpperCase(null)); // returns false
 
+
+            // function sumIsEqual (input1, input2, input3){
+            //     if(typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
+            //         return false;
+            //     }else{
+            //         return true
+            //     }
+            // }
+            function sumIsEqual(input1, input2, input3) {
+                if (input1 + input2 === input3) {
+                    return true
+                } else{
+                    return false
+                }
+            }
+
+            console.log(sumIsEqual(1, 2, 3)); // returns true
+            console.log(sumIsEqual(2, 2, 4)); // returns true
+            console.log(sumIsEqual(10, 2, 12)); // returns true
+            console.log(sumIsEqual(10, false, 12)); // returns false
+            console.log(sumIsEqual('10', '2', 12)); // returns false
+            console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
+
         </script>
     </body>
 </html>

@@ -1,0 +1,13 @@
+header {
+    background-color: lightgray;
+    padding: 10px;
+}
+.menu-item{
+    display: inline-block;
+}
+#navigation{
+    border: 1px solid red;
+}
+#navigation li {
+    display: inline-block;
+}

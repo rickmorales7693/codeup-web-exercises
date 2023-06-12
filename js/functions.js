@@ -97,7 +97,7 @@ console.log(calculateTip(0.15, 33.42));
  */
 
 const userTipPercentage = (parseFloat(prompt("How much would you like to tip as a whole percentage number?")))/100;
-const userBillTotal = (parseFloat(prompt("How much does your total bill cost?"));
+const userBillTotal = (parseFloat(prompt("How much does your total bill cost?")));
 let userTip = calculateTip(userTipPercentage, userBillTotal);
 
 alert(`You should tip $${userTip.toFixed(2)}`)
