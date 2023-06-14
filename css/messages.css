@@ -6,3 +6,30 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message {
+    background-color: lightgrey;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.message-info {
+    background-color: rgb(205 222 255);
+    color: #453e9c
+}
+
+.message-success {
+    background-color: #cff3da;
+    color: #1d7642;
+}
+
+.message-warning {
+    background-color: #fcfbc9;
+    color: #a49539;
+}
+
+.message-error {
+    background-color: #fad3d7;
+    color: #9b3e54;
+}
