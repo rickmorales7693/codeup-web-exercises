@@ -1,0 +1,75 @@
+:root {
+    --primary: blue;
+    --border-radius: 10px;
+}
+
+body {
+    background-image: url("../img/SuperDuty.jpeg");
+    background-color: #cccccc;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 100%;
+}
+
+.fancy-header {
+    color: var(--primary);
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+#hero h2 {
+    text-transform: lowercase;
+}
+
+.fancy-header {
+    color: var(--primary);
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+h2.fancy-header {
+    font-style: unset;
+}
+
+#hero {
+    background-color: bisque;
+}
+
+section {
+    background-color: #eeeeee40;
+    border-radius: var(--border-radius);
+}
+
+ul li {
+    list-style-type: circle;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+a:visited {
+    color: green;
+}
+
+a:link {
+    color: red;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
