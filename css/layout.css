@@ -89,6 +89,10 @@
     flex: 1 0 0;
 }
 
+.row.justify-center {
+    justify-content: center;
+}
+
 
 /*
     The "column" is a container element that vertically separates its
@@ -99,6 +103,9 @@
 .column {
     display: flex;
     flex-direction: column;
+    /*flex-grow: 1*/
+    /*flex-shrink: 0*/
+    /*flex-basis: 0 (keep default)*/
     flex: 1 0 0;
 }
 
