@@ -59,6 +59,7 @@
             //         return true
             //     }
             // }
+
             function sumIsEqual(input1, input2, input3) {
                 if (input1 + input2 === input3) {
                     return true
@@ -84,6 +85,21 @@
             }
 
             console.log(returnUserObject('jreich', 'password123', 'jreich@email'));
+
+
+            function returnProduct(nums){
+                let product = 1
+                for(let num of nums){
+                    product *= num;
+                }
+                return product;
+            }
+
+            console.log(returnProduct([1, 2, 3]));     // returns 1 * 2 * 3 = 6
+            console.log(returnProduct([3, 3, 3]));     // returns 3 * 3 * 3 = 27
+            console.log(returnProduct([4, 1, 2]));     // returns 4 * 1 * 2 = 8
+            console.log(returnProduct([4, 0, 2]));     // returns 4 * 0 * 2 = 0
+            console.log(returnProduct([5, 3, 2]));     // returns 5 * 3 * 2 = 30
         </script>
     </body>
 </html>
