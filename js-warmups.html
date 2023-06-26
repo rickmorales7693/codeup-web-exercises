@@ -100,6 +100,41 @@
             console.log(returnProduct([4, 1, 2]));     // returns 4 * 1 * 2 = 8
             console.log(returnProduct([4, 0, 2]));     // returns 4 * 0 * 2 = 0
             console.log(returnProduct([5, 3, 2]));     // returns 5 * 3 * 2 = 30
+
+
+            const salesData = [
+                {//index 0
+                    month: 'January',
+                    totalItemsSold: 0
+                },
+                {//index 1
+                    month: 'February',
+                    totalItemsSold: 5
+                },
+                {//index 2
+                    month: 'March',
+                    totalItemsSold: 2
+                },
+                {//index 3
+                    month: 'April',
+                    totalItemsSold: 10
+                },
+                {//index 4
+                    month: 'May',
+                    totalItemsSold: 30
+                }
+                ];
+
+            function returnTotalSales(salesData){
+                let sum = 0;
+                for (let i = 0; i < salesData.length; i += 1){
+                    sum += salesData[i].totalItemsSold
+                }
+                return sum;
+            }
+
+
+            console.log(returnTotalSales(salesData)); // returns 47
         </script>
     </body>
 </html>
