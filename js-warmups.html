@@ -146,6 +146,50 @@
             }
 
             console.log(returnAvgSales(salesData));  // returns 9.4
+
+
+
+
+            const users = [
+
+                {
+                    username: 'fred123',
+                    password: 'letmein',
+                    email: 'fred123@email.com',
+                    isAdmin: true
+                },
+                {
+                    username: 'cindy123',
+                    password: 'hello123',
+                    email: 'cindy123@email.com',
+                    isAdmin: false
+                },
+                {
+                    username: 'kathy123',
+                    password: 'letmein',
+                    email: 'kathy123@email.com',
+                    isAdmin: true
+                },
+                {
+                    username: 'kyle123',
+                    password: 'letmein',
+                    email: 'kyle123@email.com',
+                    isAdmin: false
+                }
+            ]
+
+            function returnAdmins(users){
+                const admins = [];
+                for (let i = 0; i < users.length; i += 1){
+                    if (users[i].isAdmin === true){
+                        admins.push(users[i]);
+                    }
+                }
+                return admins;
+            }
+
+            console.log(returnAdmins(users));
+
         </script>
     </body>
 </html>
