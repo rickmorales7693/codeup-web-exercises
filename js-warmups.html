@@ -135,6 +135,17 @@
 
 
             console.log(returnTotalSales(salesData)); // returns 47
+
+
+            function returnAvgSales(salesData){
+                let sum = 0
+                for (let i = 0; i < salesData.length; i += 1){
+                    sum += salesData[i].totalItemsSold
+                }
+                return sum / salesData.length
+            }
+
+            console.log(returnAvgSales(salesData));  // returns 9.4
         </script>
     </body>
 </html>
