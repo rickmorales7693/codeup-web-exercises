@@ -1,195 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>JS Warm Ups</title>
-    </head>
-    <body>
-        <script>
-            "use strict";
+<head>
+    <meta charset="UTF-8">
+    <title>JS Warm Ups</title>
+</head>
+<body>
+<script>
+    "use strict";
 
-            /* TODO
+    /* TODO
 
-            Write a function, addTen, that takes in an input. If the input is a number,
-            return the input plus ten and false otherwise.
+    Write a function, addTen, that takes in an input. If the input is a number,
+    return the input plus ten and false otherwise.
 
-            Examples:
+    Examples:
 
-            addTen(0); // returns 10
-            addTen(10); // returns 20
-            addTen('bob'); // returns false
+    addTen(0); // returns 10
+    addTen(10); // returns 20
+    addTen('bob'); // returns false
 
-            */
+    */
 
-            function addTen(input){
-                if (typeof input === "number"){
-                    return input + 10;
-                } else {
-                    return false;
-                }
+    function addTen(input) {
+        if (typeof input === "number") {
+            return input + 10;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(addTen(0));
+    console.log(addTen(10));
+    console.log(addTen('bob'));
+    console.log(addTen(-10));
+    console.log(addTen(-200));
+    console.log(addTen('larry'));
+
+    function makeUpperCase(input) {
+        if (typeof input === "string") {
+            return input.toUpperCase()
+        } else {
+            return false;
+        }
+    }
+
+    console.log(makeUpperCase('cat')); // returns 'CAT'
+    console.log(makeUpperCase('DoG')); // returns 'DOG'
+    console.log(makeUpperCase('CODEUP')); // returns 'CODEUP'
+    console.log(makeUpperCase(54)); // returns false
+    console.log(makeUpperCase(true)); // returns false
+    console.log(makeUpperCase(null)); // returns false
+
+
+    // function sumIsEqual (input1, input2, input3){
+    //     if(typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
+    //         return false;
+    //     }else{
+    //         return true
+    //     }
+    // }
+
+    function sumIsEqual(input1, input2, input3) {
+        if (input1 + input2 === input3) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    console.log(sumIsEqual(1, 2, 3)); // returns true
+    console.log(sumIsEqual(2, 2, 4)); // returns true
+    console.log(sumIsEqual(10, 2, 12)); // returns true
+    console.log(sumIsEqual(10, false, 12)); // returns false
+    console.log(sumIsEqual('10', '2', 12)); // returns false
+    console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
+
+
+    function returnUserObject(username, password, email) {
+        return {
+            username: 'jreich',
+            password: 'password123',
+            email: 'jreich@email.com',
+        }
+    }
+
+    console.log(returnUserObject('jreich', 'password123', 'jreich@email'));
+
+
+    function returnProduct(nums) {
+        let product = 1
+        for (let num of nums) {
+            product *= num;
+        }
+        return product;
+    }
+
+    console.log(returnProduct([1, 2, 3]));     // returns 1 * 2 * 3 = 6
+    console.log(returnProduct([3, 3, 3]));     // returns 3 * 3 * 3 = 27
+    console.log(returnProduct([4, 1, 2]));     // returns 4 * 1 * 2 = 8
+    console.log(returnProduct([4, 0, 2]));     // returns 4 * 0 * 2 = 0
+    console.log(returnProduct([5, 3, 2]));     // returns 5 * 3 * 2 = 30
+
+
+    const salesData = [
+        {//index 0
+            month: 'January',
+            totalItemsSold: 0
+        },
+        {//index 1
+            month: 'February',
+            totalItemsSold: 5
+        },
+        {//index 2
+            month: 'March',
+            totalItemsSold: 2
+        },
+        {//index 3
+            month: 'April',
+            totalItemsSold: 10
+        },
+        {//index 4
+            month: 'May',
+            totalItemsSold: 30
+        }
+    ];
+
+    function returnTotalSales(salesData) {
+        let sum = 0;
+        for (let i = 0; i < salesData.length; i += 1) {
+            sum += salesData[i].totalItemsSold
+        }
+        return sum;
+    }
+
+
+    console.log(returnTotalSales(salesData)); // returns 47
+
+
+    function returnAvgSales(salesData) {
+        let sum = 0
+        for (let i = 0; i < salesData.length; i += 1) {
+            sum += salesData[i].totalItemsSold
+        }
+        return sum / salesData.length
+    }
+
+    console.log(returnAvgSales(salesData));  // returns 9.4
+
+
+    const users = [
+
+        {
+            username: 'fred123',
+            password: 'letmein',
+            email: 'fred123@email.com',
+            isAdmin: true
+        },
+        {
+            username: 'cindy123',
+            password: 'hello123',
+            email: 'cindy123@email.com',
+            isAdmin: false
+        },
+        {
+            username: 'kathy123',
+            password: 'letmein',
+            email: 'kathy123@email.com',
+            isAdmin: true
+        },
+        {
+            username: 'kyle123',
+            password: 'letmein',
+            email: 'kyle123@email.com',
+            isAdmin: false
+        }
+    ]
+
+    function returnAdmins(users) {
+        const admins = [];
+        for (let i = 0; i < users.length; i += 1) {
+            if (users[i].isAdmin === true) {
+                admins.push(users[i]);
             }
+        }
+        return admins;
+    }
 
-            console.log(addTen(0));
-            console.log(addTen(10));
-            console.log(addTen('bob'));
-            console.log(addTen(-10));
-            console.log(addTen(-200));
-            console.log(addTen('larry'));
-
-            function makeUpperCase(input){
-                if (typeof input === "string"){
-                    return input.toUpperCase()
-                } else {
-                    return false;
-                }
-            }
-
-            console.log(makeUpperCase('cat')); // returns 'CAT'
-            console.log(makeUpperCase('DoG')); // returns 'DOG'
-            console.log(makeUpperCase('CODEUP')); // returns 'CODEUP'
-            console.log(makeUpperCase(54)); // returns false
-            console.log(makeUpperCase(true)); // returns false
-            console.log(makeUpperCase(null)); // returns false
+    console.log(returnAdmins(users));
 
 
-            // function sumIsEqual (input1, input2, input3){
-            //     if(typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
-            //         return false;
-            //     }else{
-            //         return true
-            //     }
-            // }
+    const neighborhood1 = {
+        neighborhood: "Lovely Estates",
+        medianHomePrice: 280000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: 22
+    };
 
-            function sumIsEqual(input1, input2, input3) {
-                if (input1 + input2 === input3) {
-                    return true
-                } else{
-                    return false
-                }
-            }
+    const neighborhood2 = {
+        neighborhood: "Luminous Estates",
+        medianHomePrice: 270000,
+        pool: true,
+        tennis: false,
+        crimeRate: "high",
+        schools: 24
+    }
 
-            console.log(sumIsEqual(1, 2, 3)); // returns true
-            console.log(sumIsEqual(2, 2, 4)); // returns true
-            console.log(sumIsEqual(10, 2, 12)); // returns true
-            console.log(sumIsEqual(10, false, 12)); // returns false
-            console.log(sumIsEqual('10', '2', 12)); // returns false
-            console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
+    const neighborhood3 = {
+        neighborhood: "Oak Mountain",
+        medianHomePrice: 290000,
+        pool: false,
+        tennis: false,
+        crimeRate: "low",
+        schools: 24
+    }
 
+    const neighborhood4 = {
+        neighborhood: "Ginormous Acres",
+        medianHomePrice: 350000,
+        pool: true,
+        tennis: true,
+        crimeRate: "low",
+        schools: 27
+    }
 
-            function returnUserObject(username, password, email) {
-                return {
-                    username: 'jreich',
-                    password: 'password123',
-                    email: 'jreich@email.com',
-                }
-            }
+    function isDesirableNeighborhood(neighborhood) {
+        if (neighborhood.medianHomePrice < 300000 &&
+            neighborhood.crimeRate === "low" &&
+            neighborhood.schools >= 24) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-            console.log(returnUserObject('jreich', 'password123', 'jreich@email'));
-
-
-            function returnProduct(nums){
-                let product = 1
-                for(let num of nums){
-                    product *= num;
-                }
-                return product;
-            }
-
-            console.log(returnProduct([1, 2, 3]));     // returns 1 * 2 * 3 = 6
-            console.log(returnProduct([3, 3, 3]));     // returns 3 * 3 * 3 = 27
-            console.log(returnProduct([4, 1, 2]));     // returns 4 * 1 * 2 = 8
-            console.log(returnProduct([4, 0, 2]));     // returns 4 * 0 * 2 = 0
-            console.log(returnProduct([5, 3, 2]));     // returns 5 * 3 * 2 = 30
-
-
-            const salesData = [
-                {//index 0
-                    month: 'January',
-                    totalItemsSold: 0
-                },
-                {//index 1
-                    month: 'February',
-                    totalItemsSold: 5
-                },
-                {//index 2
-                    month: 'March',
-                    totalItemsSold: 2
-                },
-                {//index 3
-                    month: 'April',
-                    totalItemsSold: 10
-                },
-                {//index 4
-                    month: 'May',
-                    totalItemsSold: 30
-                }
-                ];
-
-            function returnTotalSales(salesData){
-                let sum = 0;
-                for (let i = 0; i < salesData.length; i += 1){
-                    sum += salesData[i].totalItemsSold
-                }
-                return sum;
-            }
+    console.log(isDesirableNeighborhood(neighborhood1), false);
+    console.log(isDesirableNeighborhood(neighborhood2,), false);
+    console.log(isDesirableNeighborhood(neighborhood3), true);
+    console.log(isDesirableNeighborhood(neighborhood4), false);
 
 
-            console.log(returnTotalSales(salesData)); // returns 47
-
-
-            function returnAvgSales(salesData){
-                let sum = 0
-                for (let i = 0; i < salesData.length; i += 1){
-                    sum += salesData[i].totalItemsSold
-                }
-                return sum / salesData.length
-            }
-
-            console.log(returnAvgSales(salesData));  // returns 9.4
-
-
-
-
-            const users = [
-
-                {
-                    username: 'fred123',
-                    password: 'letmein',
-                    email: 'fred123@email.com',
-                    isAdmin: true
-                },
-                {
-                    username: 'cindy123',
-                    password: 'hello123',
-                    email: 'cindy123@email.com',
-                    isAdmin: false
-                },
-                {
-                    username: 'kathy123',
-                    password: 'letmein',
-                    email: 'kathy123@email.com',
-                    isAdmin: true
-                },
-                {
-                    username: 'kyle123',
-                    password: 'letmein',
-                    email: 'kyle123@email.com',
-                    isAdmin: false
-                }
-            ]
-
-            function returnAdmins(users){
-                const admins = [];
-                for (let i = 0; i < users.length; i += 1){
-                    if (users[i].isAdmin === true){
-                        admins.push(users[i]);
-                    }
-                }
-                return admins;
-            }
-
-            console.log(returnAdmins(users));
-
-        </script>
-    </body>
+</script>
+</body>
 </html>
