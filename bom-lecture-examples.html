@@ -56,11 +56,11 @@
         !!!(For Every 1000ms equals to 1s)!!!
     */
 
-    // function sayHello() {
-    //     console.log("Hello!", new Date().toLocaleString());
-    // }
-    //
-    // setInterval(sayHello, 3000);
+    function sayHello() {
+        console.log("Hello!", new Date().toLocaleString());
+    }
+
+    setInterval(sayHello, 3000);
 
     // Or
 
@@ -70,18 +70,18 @@
 
     // create interval to say howdy 10 times
 
-    // let interval = 200;
-    // let i = 1;
-    //
-    // let intervalId = setInterval(function(){
-    //     if (i === 10) {
-    //         clearInterval(intervalId);
-    //     }
-    //     console.log("Howdy!!!");
-    //     ++i;
-    // }, interval);
-    //
-    // console.log(intervalId);
+    let interval = 200;
+    let i = 1;
+
+    let intervalId = setInterval(function(){
+        if (i === 10) {
+            clearInterval(intervalId);
+        }
+        console.log("Howdy!!!");
+        ++i;
+    }, interval);
+
+    console.log(intervalId);
 
 
     /*
@@ -100,14 +100,14 @@
 
     // create pop up ad after 3 seconds
 
-    // let x;
-    // let wait = 2000;
-    //
-    // let timeoutId = setTimeout(function() {
-    //     alert("You WON $1,000,000.00!!!!");
-    //     x = 23;
-    //     console.log("The value of x is: " + x);
-    // }, wait);
+    let x;
+    let wait = 2000;
+
+    let timeoutId = setTimeout(function() {
+        alert("You WON $1,000,000.00!!!!");
+        x = 23;
+        console.log("The value of x is: " + x);
+    }, wait);
 
 
     // asynchronous errors
