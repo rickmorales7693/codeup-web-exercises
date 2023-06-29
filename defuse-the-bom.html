@@ -31,9 +31,14 @@
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
-    function defuseTheBOM() {
-        clearTimeout(updateTimer);
-        detonationTimer = null;
+
+    // this is my code (works but keeps running in the background in console.log
+    // function defuseTheBOM() {
+    //     detonationTimer = null;
+    // };
+
+    function defuseTheBOM(){
+        clearInterval(intervalId);
     };
 
     // Don't modify anything below this line!
