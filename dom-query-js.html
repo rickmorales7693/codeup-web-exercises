@@ -28,42 +28,33 @@
     (function () {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById('main-header');
-        console.log(mainHeader);
+        const mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         mainHeader.innerHTML = "JavaScript is Cool";
-        console.log(mainHeader);
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
-        console.log(subHeader);
+        const subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
         subHeader.style.color = 'blue';
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.querySelectorAll('li');
+        const listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        listItems.forEach((item, index) => {
-            if (index % 2 === 1) {
-                item.style.color = 'grey';
-            }
-        });
-
+        for(let i = 0; i < listItems.length; i += 2){
+            listItems[i].style.color = 'lime'
+        }
 
         // TODO: Set text color of li with 'dbid = 1' to blue
-        let littleBlue = document.querySelector('li');
-        littleBlue.style.color = 'blue'
-
+        document.querySelector('[data-dbid="1"]').style.color = 'blue';
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName(subParagraphs);
+        const subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        document.querySelector("p").innerHTML = "Mission Accomplished!"
-
+        subParagraphs[0].innerText = "Mission Accomplished!";
 
     })();
 </script>
