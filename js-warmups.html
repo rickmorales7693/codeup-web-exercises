@@ -241,6 +241,28 @@
     console.log(isDesirableNeighborhood(neighborhood4), false);
 
 
+    let classes = [
+        {class: "6th grade history", students: 18},
+        {class: "7th grade history", students: 20},
+        {class: "8th grade history", students: 22},
+        {class: "4th grade history", students: 30},
+        {class: "10th grade history", students: 25}
+    ];
+
+    function returnLargestStudentCount(classes) {
+        let highestStudentCount = 0;
+        for (let i = 0; i < classes.length; i += 1) {
+            if (highestStudentCount < classes[i].students) {
+                highestStudentCount = classes[i].students;
+            }
+        }
+        return highestStudentCount;
+    }
+
+
+    console.log(returnLargestStudentCount(classes)); // returns 30
+
+
 </script>
 </body>
 </html>
