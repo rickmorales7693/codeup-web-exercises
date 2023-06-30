@@ -26,7 +26,7 @@
 <button id="main-header-btn">Header Button</button>
 <button id="hello-again-btn">Hello Again Button</button>
 <button id="list-item-lime">List Item Button</button>
-<button id="dbid-btn">DBID-1 Button</button>
+<button id="sub-para-btn">Paragraph Button</button>
 
 <script>
     (function () {
@@ -52,13 +52,13 @@
         // }
 
         // TODO: Set text color of li with 'dbid = 1' to blue
-        // document.querySelector('[data-dbid="1"]').style.color = 'blue';
+        document.querySelector('[data-dbid="1"]').style.color = 'blue';
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         const subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        // subParagraphs[0].innerText = "Mission Accomplished!";
 
         // TODO: Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform the modifications that were automatically taking place. For example, the first button should set inner html of mainHeader to "JavaScript is Cool".
         const mainHeaderBtn = document.getElementById('main-header-btn');
@@ -81,10 +81,10 @@
                 }
             });
 
-        const dbidBtn = document.getElementById('dbid-btn');
-        dbidBtn.addEventListener('click',
+        const subParaBtn = document.getElementById('sub-para-btn');
+        subParaBtn.addEventListener('click',
             function (){
-                document.querySelector('[data-dbid="1"]').style.color = "blue";
+                subParagraphs[0].innerText = "Mission Accomplished!";
             });
 
 
