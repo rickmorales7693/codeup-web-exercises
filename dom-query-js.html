@@ -23,6 +23,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="main-header-btn">Header Button</button>
+<button id="hello-again-btn">Hello Again Button</button>
+<button id="list-item-lime">List Item Button</button>
+<button id="dbid-btn">DBID-1 Button</button>
 
 <script>
     (function () {
@@ -31,30 +35,58 @@
         const mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // mainHeader.innerHTML = "JavaScript is Cool";
 
         // TODO: Uncomment the next line and get the sub header element by id
         const subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        // subHeader.style.color = 'blue';
 
         // TODO: Uncomment the next line and get all list items
         const listItems = document.getElementsByTagName('li');
 
-        // TODO: Set text color on every other list item to grey
-        for(let i = 0; i < listItems.length; i += 2){
-            listItems[i].style.color = 'lime'
-        }
+        // TODO: Set text color on every other list item to lime
+        // for(let i = 0; i < listItems.length; i += 2){
+        //     listItems[i].style.color = 'lime'
+        // }
 
         // TODO: Set text color of li with 'dbid = 1' to blue
-        document.querySelector('[data-dbid="1"]').style.color = 'blue';
+        // document.querySelector('[data-dbid="1"]').style.color = 'blue';
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         const subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerText = "Mission Accomplished!";
+
+        // TODO: Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform the modifications that were automatically taking place. For example, the first button should set inner html of mainHeader to "JavaScript is Cool".
+        const mainHeaderBtn = document.getElementById('main-header-btn');
+        mainHeaderBtn.addEventListener('click',
+            function (){
+                mainHeader.innerHTML = "JavaScript is Cool";
+            });
+
+        const helloAgainBtn = document.getElementById('hello-again-btn');
+        helloAgainBtn.addEventListener('click',
+            function (){
+                subHeader.style.color = "blue";
+            });
+
+        const listItemBtn = document.getElementById('list-item-lime');
+        listItemBtn.addEventListener('click',
+            function (){
+                for(let i = 0; i < listItems.length; i += 2){
+                    listItems[i].style.color = 'lime'
+                }
+            });
+
+        const dbidBtn = document.getElementById('dbid-btn');
+        dbidBtn.addEventListener('click',
+            function (){
+                document.querySelector('[data-dbid="1"]').style.color = "blue";
+            });
+
 
     })();
 </script>
