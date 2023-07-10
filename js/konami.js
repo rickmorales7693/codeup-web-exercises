@@ -32,7 +32,6 @@ $(() => {
         $('body')
             .css('background-image', 'url("img/america2.gif")')
             .css('background-size', 'cover')
-            // .css('background-music', 'url("audio/america.mp3")');
         $('#audio').html('<audio autoplay loop><source src="audio/america.mp3" type="audio/mpeg"></audio>');
 
 
