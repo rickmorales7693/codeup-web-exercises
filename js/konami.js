@@ -6,19 +6,41 @@ $(() => {
     });
 
     let konamiCode = [38,38,40,40,37,39,37,39,66,65];
-    let konamiCodePosition = 0;
+    let position = 0;
 
-    $(document).keyup(function(event){
-        if (event.keyCode === konamiCode[konamiCodePosition]) {
-            konamiCodePosition++;
-            if (konamiCodePosition === konamiCode.length) {
-                alert("You have unlocked 30 lives!");
-                konamiCodePosition = 0;
+    $(document).keyup(function(e){
+        if (e.keyCode === konamiCode[position]) {
+            position++;
+            if (position === konamiCode.length) {
+                activateCode();
+                position = 0;
             }
         } else {
-            konamiCodePosition = 0;
+            position = 0;
         }
     });
+
+    function activateCode(){
+        alert("You won a brand new F250!");
+        // $('#container').css('background-color', 'red');
+        $('#header-name').html('Here is your new truck!')
+            .css('color', 'red')
+            .css('font-size', '50px')
+            .css('text-align', 'center')
+            .css('font-family', 'Impact,Charcoal,sans-serif')
+            .css('text-shadow', '2px 2px 4px #000000')
+            .css('text-decoration', 'underline');
+        $('body')
+            .css('background-image', 'url("img/SuperDuty.jpeg")')
+            .css('background-size', 'cover');
+
+    }
+
+
+
+
+
+
 
 
 
