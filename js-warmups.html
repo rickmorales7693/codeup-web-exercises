@@ -318,6 +318,20 @@
     }
 
     console.log(getTopRunners(runners));
+
+
+    function getTopRunner(runnersArray){
+        let topRunner = runnersArray[0];
+        for (let i = 1; i < runnersArray.length; i++){
+            if(calculateLapTimeAverage(runnersArray[i].lapTimes) < calculateLapTimeAverage(topRunner.lapTimes)){
+                topRunner = runnersArray[i];
+            }
+        }
+        return topRunner;
+    }
+
+    console.log(getTopRunner(runners));
+
 </script>
 </body>
 </html>
