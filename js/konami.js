@@ -5,13 +5,15 @@ $(() => {
         console.log(event.keyCode);
     });
 
-    $('#header-name')
-        .css('text-align', 'center')
-        .css('color', 'white')
+    $('#header-name').css({
+        'text-align': 'center',
+        'color': 'white',
+    });
 
-    $('body')
-        .css('background-image', 'url("img/plaid_ludicrous_speed.webp")')
-        .css('background-size', 'cover')
+    $('body').css({
+        'background-image': 'url("img/plaid_ludicrous_speed.webp")',
+        'background-size': 'cover',
+    });
 
 
     let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
@@ -31,20 +33,23 @@ $(() => {
 
     function activateCode() {
         alert("You are Correct!");
-        $('#header-name').html('!!!America!!!')
-            .css('color', 'red')
-            .css('font-size', '50px')
-            .css('text-align', 'center')
-            .css('font-family', 'Impact,Charcoal,sans-serif')
-            .css('text-shadow', '2px 2px 4px #000000')
-            .css('text-decoration', 'underline')
-            .css('text-transform', 'uppercase')
-            .css('letter-spacing', '5px');
+        $('#header-name').html('!!!America!!!').css({
+            'color': 'red',
+            'font-size': '50px',
+            'text-align': 'center',
+            'font-family': 'Impact,Charcoal,sans-serif',
+            'text-shadow': '2px 2px 4px #000000',
+            'text-decoration': 'underline',
+            'text-transform': 'uppercase',
+            'letter-spacing': '5px'
+        });
 
-        $('body')
-            .css('background-image', 'url("img/america2.gif")')
-            .css('background-size', 'cover')
-            .css('background-repeat', 'no-repeat')
+        $('body').css({
+            'background-image': 'url("img/america2.gif")',
+            'background-size': 'cover',
+            'background-repeat': 'no-repeat'
+        });
+
         $('#audio').html('<audio autoplay loop><source src="audio/america.mp3" type="audio/mpeg"></audio>');
 
 
