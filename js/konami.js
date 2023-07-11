@@ -5,6 +5,8 @@ $(() => {
         console.log(event.keyCode);
     });
 
+    $('#header-name').css('text-align', 'center')
+
     let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
     let position = 0;
 
@@ -28,7 +30,10 @@ $(() => {
             .css('text-align', 'center')
             .css('font-family', 'Impact,Charcoal,sans-serif')
             .css('text-shadow', '2px 2px 4px #000000')
-            .css('text-decoration', 'underline');
+            .css('text-decoration', 'underline')
+            .css('text-transform', 'uppercase')
+            .css('letter-spacing', '5px');
+
         $('body')
             .css('background-image', 'url("img/america2.gif")')
             .css('background-size', 'cover')
