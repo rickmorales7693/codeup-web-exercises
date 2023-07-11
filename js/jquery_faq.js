@@ -2,12 +2,10 @@ $(()=> {
 
     $('dd').addClass('invisible');
 
-    $('.invisible').css('display', 'none');
-
     $('body').append('<button class="btn btn-primary">Read More</button>');
 
     $('button').on('click', function() {
-        $('.invisible').toggle();
+        $('dd').toggleClass('invisible');
     });
 
     $('dt').on('click', function() {
