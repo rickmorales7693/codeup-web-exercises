@@ -2,15 +2,46 @@ $(()=> {
 
     $('dd').addClass('invisible');
 
-    $('body').append('<button class="btn btn-primary">Read More</button>');
 
-    $('button').on('click', function() {
+    $('.btn-1').on('click', () =>{
         $('dd').toggleClass('invisible');
     });
 
-    $('dt').on('click', function() {
+
+    $('.btn-2').on('click', () => {
+        $('ul').each( function () {
+            $(this)
+                .children()
+                .last()
+                .toggleClass('yellow-background')
+        });
+    });
+
+
+    $('dt').on('click', () => {
         $(this).css('background-color', 'chartreuse');
     });
+
+
+    $('h3').on('click',function () {
+        $(this)
+            .next('ul')
+            .children()
+            .toggleClass('bold')
+    });
+
+
+    $('li').on('click', function () {
+        $(this)
+            .parent()
+            .children()
+            .first()
+            .toggleClass('color-blue')
+    });
+
+
+
+
 
 
 

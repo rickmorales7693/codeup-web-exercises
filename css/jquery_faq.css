@@ -1,3 +1,19 @@
 .invisible {
     visibility: hidden;
 }
+
+.parks-header {
+    text-align: center;
+}
+
+.yellow-background {
+    background-color: yellow;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.color-blue {
+    color: blue;
+}
