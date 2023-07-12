@@ -40,8 +40,28 @@ $(()=> {
     });
 
 
+    //BONUS
+    $(document).ready(function() {
+        $('.swap-btn').on('click', function() {
+            const currentBox = $(this).parent();
+            let targetBox;
 
+            if (currentBox.is('#box1')){
+                targetBox = $('#box2');
+            } else if (currentBox.is('#box2')) {
+                let randomDirection = Math.random() < 0.5 ? 'left' : 'right';
+                targetBox = randomDirection === 'left' ? $('#box1') : $('#box3');
+            } else if (currentBox.is('#box3')) {
+                targetBox = $('#box2');
+            }
 
+            const currentImage = currentBox.find('img').attr('src');
+            const targetImage = targetBox.find('img').attr('src');
+
+            currentBox.find('img').attr('src', targetImage);
+            targetBox.find('img').attr('src', currentImage);
+        });
+    });
 
 
 
