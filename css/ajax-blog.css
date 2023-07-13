@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+#blogs {
+    margin: auto;
+    border: 1px solid #333;
+    font-size: large;
+
+}
+
+#blogs th {
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+#blogs td {
+    padding: 5px;
+    border: 1px solid #333;
+    text-align: left;
+
+}

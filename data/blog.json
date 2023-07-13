@@ -16,5 +16,13 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    }, {
+    "title": "The Third Post",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae culpa eaque ipsum laboriosam nobis numquam rerum soluta ullam? A adipisci, at corporis cum ducimus et iste maxime neque numquam odio, omnis quos tenetur vitae voluptatibus.",
+    "categories": [
+        "america",
+        "freedom"
+    ],
+    "date": "July 13, 2023"
+}
 ]
