@@ -4,10 +4,8 @@
     <title>Online Store</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/resets.css">
     <link rel="stylesheet" href="css/ajax-store.css">
-
-
-
 </head>
 <body>
 
@@ -17,8 +15,8 @@
     <thead>
     <tr>
         <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
+        <th class="quantity">Quantity</th>
+        <th class="price">Price</th>
         <th>Categories</th>
     </tr>
     </thead>
@@ -26,8 +24,9 @@
 
 </table>
 <br>
-<button id="refresh">Refresh</button>
-
+<div style="text-align: center">
+    <button id="refresh">Refresh</button>
+</div>
 <script>
     (function () {
         "use strict";
@@ -63,8 +62,6 @@
         // $("#refresh").click(function () {
         //     refresh();
         // });
-
-
 
 
     })();

@@ -17,5 +17,10 @@ h1 {
 #products td {
     padding: 5px;
     border: 1px solid #333;
-    text-align: center;
+    text-align: left;
+
+}
+
+td, th {
+    min-width: 200px;
 }
