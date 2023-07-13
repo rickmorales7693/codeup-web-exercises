@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Online Store</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/ajax-store.css">
+
+
+
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+
+</table>
+<br>
+<button id="refresh">Refresh</button>
+
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        // function refresh(){
+        //     $.ajax("/data/inventory.json").done(function (data) {
+        //         console.log(data);
+        //         let html = " ";
+        //         data.forEach(function (product) {
+        //             html += "<tr>";
+        //             html += "<td>" + product.title + "</td>";
+        //             html += "<td>" + product.quantity + "</td>";
+        //             html += "<td>" + product.price + "</td>";
+        //             html += "<td>" + product.categories + "</td>";
+        //             html += "</tr>";
+        //         });
+        //         $("#insertProducts").html(html);
+        //     });
+        // }
+        //
+        // refresh();
+
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //HINT: Your data should come back as a JSON object; use console.log() to inspect its contents and fields
+        //HINT: You will want to target #insertProducts for your new HTML elements
+
+
+        // Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.
+        //HINT: You can use the .reload() method on the location object to refresh the page
+
+
+        // $("#refresh").click(function () {
+        //     refresh();
+        // });
+
+
+
+
+    })();
+</script>
+
+<script src="js/ajax-store.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+}
+
+#products {
+    margin: auto;
+    border: 1px solid #333;
+    font-size: large;
+
+}
+
+#products th {
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+#products td {
+    padding: 5px;
+    border: 1px solid #333;
+    text-align: center;
+}
