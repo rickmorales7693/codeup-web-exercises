@@ -19,77 +19,77 @@ $(() => {
     }
 
     //Function that Sets a marker and popup
-        function elizabethRestaurant() {
-            geocode('Elizabeth Restaurant, San Antonio', MAPBOX_PROJECT).then((data) => {
-                const elizabethPopup = new mapboxgl.Popup()
-                    .setHTML(`
-                <div>   
-                    <h1>Elizabeth's Mexican Restaurant</h1>
-                    <p>5251 Timberhill Dr, San Antonio TX 78238</p>
-                </div>
-            `)
-                const elizabethMarker = new mapboxgl.Marker()
-                    .setLngLat(data)
-                    .setPopup(elizabethPopup)
-                    .addTo(map)
-                elizabethPopup.addTo(map);
+    function elizabethRestaurant() {
+        geocode('5251 Timberhill Dr, San Antonio TX 78238', MAPBOX_PROJECT).then((data) => {
+            const elizabethPopup = new mapboxgl.Popup()
+                .setHTML(`
+                    <div>   
+                        <h1>Elizabeth's Mexican Restaurant</h1>
+                        <p>5251 Timberhill Dr, San Antonio TX 78238</p>
+                    </div>
+                    `)
+            const elizabethMarker = new mapboxgl.Marker()
+                .setLngLat(data)
+                .setPopup(elizabethPopup)
+                .addTo(map)
+            elizabethPopup.addTo(map);
 
-                map.flyTo({
-                    center: data,
-                    zoom: 17,
-                    speed: 1,
-                    essential: true
-                })
-            });
-        }
+            map.flyTo({
+                center: data,
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
+        });
+    }
 
-        function oliveGarden() {
-            geocode('Olive Garden, San Antonio', MAPBOX_PROJECT).then((data) => {
-                const olivePopup = new mapboxgl.Popup()
-                    .setHTML(`
-                <div>   
-                    <h1>Olive Garden</h1>
-                    <p>5439 W Loop 1604 N, San Antonio TX 78254</p>
-                </div>
-            `)
-                const oliveMarker = new mapboxgl.Marker()
-                    .setLngLat([-98.708320, 29.489533])
-                    .setPopup(olivePopup)
-                    .addTo(map);
-                olivePopup.addTo(map);
+    function oliveGarden() {
+        geocode('5439 W Loop 1604 N, San Antonio TX 78254', MAPBOX_PROJECT).then((data) => {
+            const olivePopup = new mapboxgl.Popup()
+                .setHTML(`
+                    <div>   
+                        <h1>Olive Garden</h1>
+                        <p>5439 W Loop 1604 N, San Antonio TX 78254</p>
+                    </div>
+                    `)
+            const oliveMarker = new mapboxgl.Marker()
+                .setLngLat([-98.708320, 29.489533])
+                .setPopup(olivePopup)
+                .addTo(map);
+            olivePopup.addTo(map);
 
-                map.flyTo({
-                    center: [-98.708320, 29.489533],
-                    zoom: 17,
-                    speed: 1,
-                    essential: true
-                })
-            });
-        }
+            map.flyTo({
+                center: data,
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
+        });
+    }
 
-        function tiuSteppie() {
-            geocode('Tiu Steppie, San Antonio', MAPBOX_PROJECT).then((data) => {
-                const tiuPopup = new mapboxgl.Popup()
-                    .setHTML(`
-                <div>   
-                    <h1>Tiu Steppie Italian Restaurant</h1>
-                    <p>9910 W Loop 1604 N, San Antonio TX 78254</p>
-                </div>
-            `);
-                const tiuMarker = new mapboxgl.Marker()
-                    .setLngLat(data)
-                    .setPopup(tiuPopup)
-                    .addTo(map);
-                tiuPopup.addTo(map);
+    function tiuSteppie() {
+        geocode('9910 W Loop 1604 N, San Antonio TX 78254', MAPBOX_PROJECT).then((data) => {
+            const tiuPopup = new mapboxgl.Popup()
+                .setHTML(`
+                    <div>   
+                        <h1>Tiu Steppie Italian Restaurant</h1>
+                        <p>9910 W Loop 1604 N, San Antonio TX 78254</p>
+                    </div>
+                    `);
+            const tiuMarker = new mapboxgl.Marker()
+                .setLngLat(data)
+                .setPopup(tiuPopup)
+                .addTo(map);
+            tiuPopup.addTo(map);
 
-                map.flyTo({
-                    center: data,
-                    zoom: 17,
-                    speed: 1,
-                    essential: true
-                })
-            });
-        }
+            map.flyTo({
+                center: data,
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
+        });
+    }
 
 
     // Reset Button
@@ -109,7 +109,7 @@ $(() => {
 
 
     // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
-$('#search-button').click(function () {
+    $('#search-button').click(function () {
         const userInput = $('#search-input').val();
         geocode(userInput, MAPBOX_PROJECT).then((data) => {
             const popup = new mapboxgl.Popup()
@@ -127,7 +127,6 @@ $('#search-button').click(function () {
             })
         });
     });
-
 
 
     //Events
