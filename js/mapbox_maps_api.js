@@ -24,7 +24,7 @@ $(() => {
                 const elizabethPopup = new mapboxgl.Popup()
                     .setHTML(`
                 <div>   
-                    <h1>Elizabeth's</h1>
+                    <h1>Elizabeth's Mexican Restaurant</h1>
                     <p>5251 Timberhill Dr, San Antonio TX 78238</p>
                 </div>
             `)
@@ -49,7 +49,7 @@ $(() => {
                     .setHTML(`
                 <div>   
                     <h1>Olive Garden</h1>
-                    <p>Best Breadsticks</p>
+                    <p>5439 W Loop 1604 N, San Antonio TX 78254</p>
                 </div>
             `)
                 const oliveMarker = new mapboxgl.Marker()
@@ -72,7 +72,7 @@ $(() => {
                 const tiuPopup = new mapboxgl.Popup()
                     .setHTML(`
                 <div>   
-                    <h1>Tiu Steppie</h1>
+                    <h1>Tiu Steppie Italian Restaurant</h1>
                     <p>9910 W Loop 1604 N, San Antonio TX 78254</p>
                 </div>
             `);

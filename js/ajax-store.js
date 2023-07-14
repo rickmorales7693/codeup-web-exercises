@@ -1,7 +1,7 @@
-$(()=> {
+$(() => {
 
     function refresh(){
-        $.ajax("/data/inventory.json").done(function (data) {
+        $.ajax("data/inventory.json").done(function (data) {
             console.log(data);
             let html = " ";
             data.forEach(function (product) {
@@ -21,20 +21,6 @@ $(()=> {
     $("#refresh").click(function () {
         refresh();
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
