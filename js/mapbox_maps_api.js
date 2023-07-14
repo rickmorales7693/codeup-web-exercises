@@ -2,13 +2,6 @@ $(() => {
 
     //Global Variables
     const map = initializeMap();
-    const marker1 = createMarker1();
-    const marker2 = createMarker2();
-    const marker3 = createMarker3();
-    const popup1 = createPopup1();
-    const popup2 = createPopup2();
-    const popup3 = createPopup3();
-
 
     //Function that initializes the map
     function initializeMap() {
@@ -25,96 +18,76 @@ $(() => {
 
     }
 
-
-    //Function that creates a marker
-    function createMarker1() {
-        return new mapboxgl.Marker()
-            .setLngLat([-98.629830, 29.482480])
-            .addTo(map);
-    }
-
-    function createMarker2() {
-        return new mapboxgl.Marker()
-            .setLngLat([-98.698380, 29.509950])
-            .addTo(map);
-    }
-
-    function createMarker3() {
-        return new mapboxgl.Marker()
-            .setLngLat([-98.680780, 29.534310])
-            .addTo(map);
-    }
-
-
-    //Function that creates a popup
-    function createPopup1() {
-        return new mapboxgl.Popup()
-            .setLngLat([-98.629830, 29.482480])
-            .setHTML(`
-                <div>   
-                    <h1>Elizabeth</h1>
-                    <p>Best Mexican Food</p>
-                </div>
-            `);
-    }
-
-    function createPopup2(){
-        return new mapboxgl.Popup()
-            .setLngLat([-98.698380, 29.509950])
-            .setHTML(`
-                <div>   
-                    <h1>Olive Garden</h1>
-                    <p>Best Breadsticks</p>
-                </div>
-            `);
-    }
-
-    function createPopup3(){
-        return new mapboxgl.Popup()
-            .setLngLat([-98.680780, 29.534310])
-            .setHTML(`
-                <div>   
-                    <h1>Tiu Steppie</h1>
-                    <p>Best Italian Sauce</p>
-                </div>
-            `);
-    }
-
-
-    //Function that uses geocode to take the string The Alamo, San Antonio and get coordinates to set a marker and popup
+    //Function that Sets a marker and popup
     function elizabethRestaurant() {
         geocode('Elizabeth Restaurant, San Antonio', MAPBOX_PROJECT).then((data) => {
             const elizabethPopup = new mapboxgl.Popup()
-                .setHTML('<p>Delicious Mexican Food</p>');
+                .setHTML(`
+                <div>   
+                    <h1>Elizabeth's</h1>
+                    <p>Best Mexican Food</p>
+                </div>
+            `)
             const elizabethMarker = new mapboxgl.Marker()
                 .setLngLat(data)
                 .setPopup(elizabethPopup)
-                .addTo(map);
+                .addTo(map)
             elizabethPopup.addTo(map);
+
+            map.flyTo({
+                center: data,
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
         });
     }
 
     function oliveGarden() {
         geocode('Olive Garden, San Antonio', MAPBOX_PROJECT).then((data) => {
             const olivePopup = new mapboxgl.Popup()
-                .setHTML('<p>Delicious Breadsticks</p>');
+                .setHTML(`
+                <div>   
+                    <h1>Olive Garden</h1>
+                    <p>Best Breadsticks</p>
+                </div>
+            `)
             const oliveMarker = new mapboxgl.Marker()
-                .setLngLat(data)
+                .setLngLat([-98.708320, 29.489533])
                 .setPopup(olivePopup)
                 .addTo(map);
             olivePopup.addTo(map);
+
+            map.flyTo({
+                center: [-98.708320, 29.489533],
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
         });
     }
 
     function tiuSteppie() {
         geocode('Tiu Steppie, San Antonio', MAPBOX_PROJECT).then((data) => {
             const tiuPopup = new mapboxgl.Popup()
-                .setHTML('<p>Best Sauce</p>');
+                .setHTML(`
+                <div>   
+                    <h1>Tiu Steppie</h1>
+                    <p>Best Italian Sauce</p>
+                </div>
+            `);
             const tiuMarker = new mapboxgl.Marker()
                 .setLngLat(data)
                 .setPopup(tiuPopup)
                 .addTo(map);
             tiuPopup.addTo(map);
+
+            map.flyTo({
+                center: data,
+                zoom: 17,
+                speed: 1,
+                essential: true
+            })
         });
     }
 
@@ -127,9 +100,7 @@ $(() => {
 
     //Runs when the program loads
     map.setZoom(9);
-    marker1.setPopup(popup1);
-    marker2.setPopup(popup2);
-    marker3.setPopup(popup3);
+
 
 
 });
