@@ -19,77 +19,115 @@ $(() => {
     }
 
     //Function that Sets a marker and popup
-    function elizabethRestaurant() {
-        geocode('Elizabeth Restaurant, San Antonio', MAPBOX_PROJECT).then((data) => {
-            const elizabethPopup = new mapboxgl.Popup()
-                .setHTML(`
+        function elizabethRestaurant() {
+            geocode('Elizabeth Restaurant, San Antonio', MAPBOX_PROJECT).then((data) => {
+                const elizabethPopup = new mapboxgl.Popup()
+                    .setHTML(`
                 <div>   
                     <h1>Elizabeth's</h1>
-                    <p>Best Mexican Food</p>
+                    <p>5251 Timberhill Dr, San Antonio TX 78238</p>
                 </div>
             `)
-            const elizabethMarker = new mapboxgl.Marker()
-                .setLngLat(data)
-                .setPopup(elizabethPopup)
-                .addTo(map)
-            elizabethPopup.addTo(map);
+                const elizabethMarker = new mapboxgl.Marker()
+                    .setLngLat(data)
+                    .setPopup(elizabethPopup)
+                    .addTo(map)
+                elizabethPopup.addTo(map);
 
-            map.flyTo({
-                center: data,
-                zoom: 17,
-                speed: 1,
-                essential: true
-            })
-        });
-    }
+                map.flyTo({
+                    center: data,
+                    zoom: 17,
+                    speed: 1,
+                    essential: true
+                })
+            });
+        }
 
-    function oliveGarden() {
-        geocode('Olive Garden, San Antonio', MAPBOX_PROJECT).then((data) => {
-            const olivePopup = new mapboxgl.Popup()
-                .setHTML(`
+        function oliveGarden() {
+            geocode('Olive Garden, San Antonio', MAPBOX_PROJECT).then((data) => {
+                const olivePopup = new mapboxgl.Popup()
+                    .setHTML(`
                 <div>   
                     <h1>Olive Garden</h1>
                     <p>Best Breadsticks</p>
                 </div>
             `)
-            const oliveMarker = new mapboxgl.Marker()
-                .setLngLat([-98.708320, 29.489533])
-                .setPopup(olivePopup)
-                .addTo(map);
-            olivePopup.addTo(map);
+                const oliveMarker = new mapboxgl.Marker()
+                    .setLngLat([-98.708320, 29.489533])
+                    .setPopup(olivePopup)
+                    .addTo(map);
+                olivePopup.addTo(map);
 
-            map.flyTo({
-                center: [-98.708320, 29.489533],
-                zoom: 17,
-                speed: 1,
-                essential: true
-            })
-        });
-    }
+                map.flyTo({
+                    center: [-98.708320, 29.489533],
+                    zoom: 17,
+                    speed: 1,
+                    essential: true
+                })
+            });
+        }
 
-    function tiuSteppie() {
-        geocode('Tiu Steppie, San Antonio', MAPBOX_PROJECT).then((data) => {
-            const tiuPopup = new mapboxgl.Popup()
-                .setHTML(`
+        function tiuSteppie() {
+            geocode('Tiu Steppie, San Antonio', MAPBOX_PROJECT).then((data) => {
+                const tiuPopup = new mapboxgl.Popup()
+                    .setHTML(`
                 <div>   
                     <h1>Tiu Steppie</h1>
-                    <p>Best Italian Sauce</p>
+                    <p>9910 W Loop 1604 N, San Antonio TX 78254</p>
                 </div>
             `);
-            const tiuMarker = new mapboxgl.Marker()
+                const tiuMarker = new mapboxgl.Marker()
+                    .setLngLat(data)
+                    .setPopup(tiuPopup)
+                    .addTo(map);
+                tiuPopup.addTo(map);
+
+                map.flyTo({
+                    center: data,
+                    zoom: 17,
+                    speed: 1,
+                    essential: true
+                })
+            });
+        }
+
+
+    // Reset Button
+    $("#reset").click(function () {
+        map.flyTo({
+            center: [-98.4916, 29.4252],
+            zoom: 9,
+            speed: 1,
+            essential: true
+        })
+    });
+
+    //Hide Markers
+    $('#hide-markers').click(function () {
+        $('.mapboxgl-marker').toggle();
+    });
+
+
+    // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
+$('#search-button').click(function () {
+        const userInput = $('#search-input').val();
+        geocode(userInput, MAPBOX_PROJECT).then((data) => {
+            const popup = new mapboxgl.Popup()
+            const marker = new mapboxgl.Marker()
                 .setLngLat(data)
-                .setPopup(tiuPopup)
+                .setPopup(popup)
                 .addTo(map);
-            tiuPopup.addTo(map);
+            popup.addTo(map);
 
             map.flyTo({
                 center: data,
-                zoom: 17,
+                zoom: 14,
                 speed: 1,
                 essential: true
             })
         });
-    }
+    });
+
 
 
     //Events
@@ -100,7 +138,6 @@ $(() => {
 
     //Runs when the program loads
     map.setZoom(9);
-
 
 
 });
