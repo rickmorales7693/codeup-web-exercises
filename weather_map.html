@@ -9,22 +9,30 @@
     <!--Mapbox Link-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'/>
     <!--CSS-->
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-<div>
-    <h1 style="text-align: center">Weather Map</h1>
+<!--Header-->
+<div class="container">
+    <div class="row justify-space-between">
+        <div class="column shrink">
+            <h1>Weather Map</h1>
+        </div>
+        <div class="column shrink justify-center">
+            <p>Current City:</p>
+        </div>
+    </div>
 </div>
+<!--Search Bar-->
+<div>
+    <input type="text" id="search-input" placeholder="Search for a location">
+    <button id="search-button">Search</button>
+</div>
+<br>
+<!--Map-->
 <div id="map" style="height: 40rem; width: 40rem"></div>
-
-
-
-
-
-
-
-
-
 
 
 <!-- include API key file -->
