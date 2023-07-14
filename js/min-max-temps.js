@@ -40,8 +40,8 @@ function returnMinMaxTemps({list}) {
 
 
     //EXAMPLE OF USAGE:
-    $.get(OPEN_WEATHER_API_URL).done(data => {
-            const minMaxTemps = returnMinMaxTemps(data);
-            // use minMaxTemps data as needed
-
-     });
+    // $.get(OPEN_WEATHER_API_URL).done(data => {
+    //         const minMaxTemps = returnMinMaxTemps(data);
+    //         // use minMaxTemps data as needed
+    //
+    //  });
