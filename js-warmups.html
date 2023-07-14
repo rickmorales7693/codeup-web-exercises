@@ -559,20 +559,58 @@
                 House Head: \n${loopHeads(house.heads)}
             `);
         });
-    };
+    }
 
     logHouses(hogwartsHouses);
 
-    // HINT:
-    // When you copy the object into IntelliJ, make sure to expand and collapse
-    // the different properties to get a good idea of what is going on and keep
-    // from being overwhelmed
 
+    // Write a function called removeEvens that takes an array of numbers
+    // And removes any even number from the array
+    function removeEvens(inputArray) {
+        //Guard against anything that is NOT an array
+        if (!Array.isArray((inputArray))) {
+            return false
+        }
+        //declare a new array that will hold all the odd numbers
+        const oddNumbers = [];
+        //loop through the inputArray
+        for (const number of inputArray) {
+            //Guard against any item in the array that is NOT a number
+            if(!isANumber(number)) {
+                return false;
+            }
+            //in the loop, check to see if our item is even or odd
+            if (number % 2 !== 0) {
+                //if odd add to our new array
+                oddNumbers.push(number);
+            }
+        }
+        //after the loop, return the new array holding the odd numbers
+        return oddNumbers;
+        // return inputArray.filter((number) => number % 2 !== 0);
+    }
 
-    // BONUS:
-    // - Log a random house head each time
-    // - Throw some traits in there
-    // - Write a conditional statement to log something special for your favorite house
+    console.log(removeEvens([62, 3, 2, 8, 531, 7]))
+
+    // Examples:
+
+    // Input: [1, 3, 2, 13, 74, 33]
+    // Expected Output: [1, 3, 13, 33]
+
+    // Input: [62, 3, 2, 8, 531, 7]
+    // Expected Output: [3, 531, 7]
+
+    function isANumber(input) {
+        if (typeof input === 'boolean' || input === null) {
+            return false;
+        }
+        if (!isNaN(input)) {
+            return true;
+        } else {
+            return false;
+        }
+        // return !(isNaN(parseFloat(input)));
+    }
 
 </script>
 </body>

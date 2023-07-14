@@ -77,14 +77,14 @@ $(() => {
 
     //Events
     document.querySelector('#geocode-button').addEventListener('click', goToParis);
-    document.querySelector('#reverse-geocode-button').addEventListener('click', reverseGeocode());
-    document.querySelector('#find-address').addEventListener('click', findAndPrintAddress);
+    document.querySelector('#reverse-geocode-button').addEventListener('click', findAndPrintAddress);
+    // document.querySelector('#find-address').addEventListener('click', findAndPrintAddress);
     document.querySelector('#mark-alamo').addEventListener('click', markAlamo);
 
 
 
     //Runs when the program loads
-    map.zoom(15);
+    map.setZoom(15);
     marker.setPopup(popup);
 
 
