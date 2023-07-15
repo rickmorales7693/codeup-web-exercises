@@ -1,0 +1,33 @@
+body {
+    background-color: lightgray;
+}
+
+.container-header {
+    background-color: blue;
+    color: white;
+}
+
+.header-row {
+    padding: unset;
+}
+
+h1 {
+    margin: unset;
+}
+
+p  {
+    margin: unset;
+    padding: unset;
+    align-content: center;
+    justify-content: center;
+}
+
+.row-hero {
+    padding: unset;
+}
+
+.row-cards {
+    margin: unset;
+    padding: unset;
+
+}
