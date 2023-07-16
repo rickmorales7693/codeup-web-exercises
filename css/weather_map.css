@@ -21,7 +21,9 @@ h1 {
 
 /*SEARCH BAR*/
 
-
+.container-search {
+    text-align: center;
+}
 
 
 /*HERO*/
@@ -36,5 +38,4 @@ h1 {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: unset;
-    /*margin: unset;*/
 }
