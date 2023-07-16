@@ -21,7 +21,7 @@
 function returnMinMaxTemps({list}) {
     const minMaxTempDays = [];
 
-    // loops through 40 three hour blocks of forecast and creates a new temperature object for each new day
+    // loops through 40 three-hour blocks of forecast and creates a new temperature object for each new day
     list.forEach(({dt_txt, main: {temp_max, temp_min}}) => {
         const [date, time] = dt_txt.split(' '); // splits the date time string
         if (minMaxTempDays.length === 0 || time.startsWith('00')) { // add a new forecast day for each new date
@@ -40,8 +40,8 @@ function returnMinMaxTemps({list}) {
 
 
     //EXAMPLE OF USAGE:
-    // $.get(OPEN_WEATHER_API_URL).done(data => {
-    //         const minMaxTemps = returnMinMaxTemps(data);
-    //         // use minMaxTemps data as needed
-    //
-    //  });
+    $.get(OPEN_WEATHER_URL).done(data => {
+            const minMaxTemps = returnMinMaxTemps(data);
+            // use minMaxTemps data as needed
+
+     });

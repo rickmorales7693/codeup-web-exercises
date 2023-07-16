@@ -25,6 +25,24 @@ h1 {
     text-align: center;
 }
 
+#search-input {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#search-button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+    margin-left: 10px;
+}
+
 
 /*HERO*/
 
