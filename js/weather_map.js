@@ -89,7 +89,7 @@ $(()=>{
 
     // EVENT LISTENERS------------------------------------------------------
     map.setZoom(9);
-
+    $('.card-header').setAttribute('currentDate', formattedDate);
 
 
 

@@ -2,32 +2,39 @@ body {
     background-color: lightgray;
 }
 
+/*HEADER*/
+
 .container-header {
     background-color: blue;
     color: white;
 }
 
-.header-row {
-    padding: unset;
-}
-
 h1 {
     margin: unset;
-}
-
-p  {
-    margin: unset;
-    padding: unset;
-    align-content: center;
-    justify-content: center;
-}
-
-.row-hero {
     padding: unset;
 }
 
-.row-cards {
-    margin: unset;
-    padding: unset;
+.col-city {
+    display: flex;
+    align-items: center;
+}
 
+/*SEARCH BAR*/
+
+
+
+
+/*HERO*/
+
+
+
+
+/*CARDS*/
+
+.con-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: unset;
+    /*margin: unset;*/
 }
