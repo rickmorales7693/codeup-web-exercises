@@ -57,3 +57,8 @@ h1 {
     flex-wrap: wrap;
     padding: unset;
 }
+
+.cards-col {
+    padding: unset;
+    margin: unset;
+}

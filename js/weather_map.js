@@ -1,8 +1,6 @@
 $(() => {
 
 
-
-
     // Base URL for forecast API
     const OPEN_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
@@ -128,6 +126,7 @@ $(() => {
         return new mapboxgl.Marker()
             .setLngLat([-98.4916, 29.4252])
             .addTo(map);
+        getCurrentCity(data[0],data[1]);
     }
 
 
