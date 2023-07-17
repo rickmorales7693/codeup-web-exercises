@@ -43,27 +43,20 @@ $(() => {
                 speed: 2,
                 essential: true
             });
+            getCurrentCity(data[0],data[1]);
         });
-        getCurrentCity();
     });
 
 
     //Function that shows the current city of the marker that was searched for
-
-    // refactor function to take in lon and lat as parameters
-    // instead of using map.getCenter().lat and map.getCenter().lng
-
     function getCurrentCity(lon, lat) {
-        const url = getWeatherURL();
-
+        const url = getWeatherURL(lat, lon);
         $.get(url).done((data) => {
             console.log(data);
             const currentCity = data.city.name;
             $('#current-city').html(currentCity)
         });
     }
-
-
 
 
     // Function that gives a 24-hour forecast for the location of the marker
