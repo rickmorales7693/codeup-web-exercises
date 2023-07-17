@@ -46,8 +46,8 @@ $(() => {
             });
             getCurrentCity(data[0],data[1]);
             createFiveCards(data[1],data[0]);
-            // getWeatherInfo(data[1],data[0]);
-        });
+        })
+
     });
 
 
