@@ -5,17 +5,11 @@ $(() => {
     const OPEN_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
 
-
     // Simple way to create URL for request based on coordinates
     function getWeatherURL(lat, lon) {
         return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
     }
 
-    function getWeatherInfo(lat, lon){
-        $.ajax(getWeatherURL(lat, lon)).done((data) => {
-            createFiveCards(data);
-        });
-    }
 
     //Function that initializes the map
     const map = initializeMap();
@@ -34,8 +28,7 @@ $(() => {
 
 
     // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
-    $('#search-button')
-        .click(function () {
+    $('#search-button').click(function () {
         const userInput = $('#search-input').val();
         geocode(userInput, MAPBOX_PROJECT).then((data) => {
             const popup = new mapboxgl.Popup()
@@ -52,15 +45,16 @@ $(() => {
                 essential: true
             });
             getCurrentCity(data[0],data[1]);
-            createFiveCards();
+            createFiveCards(data[1],data[0]);
+            // getWeatherInfo(data[1],data[0]);
         });
-
     });
 
 
-
     //Function that shows the current city and state of the marker that was searched for
-    function getCurrentCity(lon, lat) {
+    function getCurrentCity(lat, lon) {
+        console.log("inside getCurrentCity")
+        console.log(`lat: ${lat}, lon: ${lon}`)
         const url = getWeatherURL(lat, lon);
         $.get(url).done((data) => {
             const currentCity = data.city.name;
@@ -70,22 +64,26 @@ $(() => {
 
 
     // New Function for 5 Cards
-    function createFiveCards() {
+    function createFiveCards(lat, lon) {
+        console.log("inside createFiveCards")
+        console.log(`lat: ${lat}, lon: ${lon}`)
         $('#cards').html('');
         for (let i = 0; i < 5; i++) {
             const cardId = `card${i + 1}`;
             const cardContent = `<div id="${cardId}" class="card"></div>`;
             $('#cards').append(cardContent);
         }
-        getNextFiveDaysWeather();
+        getNextFiveDaysWeather(lat, lon);
     }
 
-    function getNextFiveDaysWeather() {
-        const lat = map.getCenter().lat;
-        const lon = map.getCenter().lng;
+    function getNextFiveDaysWeather(lat, lon) {
+        // const lat = map.getCenter().lat;
+        // const lon = map.getCenter().lng;
         const url = getWeatherURL(lat, lon);
+        console.log(url)
         const forecastArray = [];
-
+        console.log("about to do ajax request in getNextFiveDaysWeather")
+        console.log(`lat: ${lat}, lon: ${lon}`)
         $.get(url).done((data) => {
             console.log(data);
             const forecast = data.list;
@@ -117,8 +115,6 @@ $(() => {
         return forecast.filter((item, index) => index % 8 === 0);
     }
 
-    createFiveCards();
-
 
     // Marker for the map
     const marker = createMarker();
@@ -134,7 +130,8 @@ $(() => {
     map.on('click', (e)=>{
         const lat = e.lngLat.lat;
         const lon = e.lngLat.lng;
-        getWeatherInfo(e.lngLat.lat, e.lngLat.lng);
+        createFiveCards(e.lngLat.lat, e.lngLat.lng);
+
         console.log(e.lngLat.lat, e.lngLat.lng);
         marker.setLngLat([lon, lat]);
 
@@ -142,6 +139,6 @@ $(() => {
 
 
     //Get the weather for San Antonio on the page load
-    getWeatherInfo(29.4252, -98.4916)
+    createFiveCards(29.4252, -98.4916)
 
 });
