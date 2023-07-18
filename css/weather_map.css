@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/weather2.gif");
+    background-image: url("../img/black-background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -8,7 +8,7 @@ body {
 /*HEADER*/
 
 .container-header {
-    background-color: blue;
+    font-weight: bold;
     color: white;
 }
 
@@ -20,6 +20,12 @@ h1 {
 .col-city {
     display: flex;
     align-items: center;
+}
+
+.col-weather {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }
 
 /*SEARCH BAR*/
@@ -41,8 +47,8 @@ h1 {
     height: 30px;
     border-radius: 5px;
     border: 1px solid black;
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: black;
     margin-left: 10px;
 }
 
