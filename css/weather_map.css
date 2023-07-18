@@ -61,4 +61,5 @@ h1 {
 .cards-col {
     padding: unset;
     margin: unset;
+    font-weight: bold;
 }

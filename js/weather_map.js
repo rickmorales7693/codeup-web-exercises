@@ -4,10 +4,14 @@ $(() => {
     // Base URL for forecast API
     const OPEN_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
+
+
     // Simple way to create URL for request based on coordinates
     function getWeatherURL(lat, lon) {
         return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
     }
+
+
 
     //Function that initializes the map
     const map = initializeMap();
@@ -16,13 +20,15 @@ $(() => {
         const mapOptions = {
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v12',
-            zoom: 10,
+            zoom: 9,
             center: [-98.4916, 29.4252],
         }
         return new mapboxgl.Map(mapOptions);
     }
 
     map.setZoom(9);
+
+
 
     // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
     $('#search-button').click(function () {
@@ -47,7 +53,7 @@ $(() => {
 
             map.flyTo({
                 center: data,
-                zoom: 14,
+                zoom: 9,
                 speed: 2,
                 essential: true
             });
@@ -55,6 +61,8 @@ $(() => {
             createFiveCards(data[1],data[0]);
         });
     }
+
+
 
     //Function that shows the current city and state of the marker that was searched for
     function getCurrentCity(lat, lon) {
@@ -66,6 +74,8 @@ $(() => {
             $('#current-city').html(currentCity)
         });
     }
+
+
 
     // New Function for 5 Cards
     function createFiveCards(lat, lon) {
@@ -118,6 +128,8 @@ $(() => {
         return forecast.filter((item, index) => index % 8 === 0);
     }
 
+
+
     // Marker for the map
     const marker = createMarker();
     function createMarker() {
@@ -126,6 +138,8 @@ $(() => {
             .addTo(map);
         getCurrentCity(data[0],data[1]);
     }
+
+
 
     //Click anywhere and get the weather for that location
     map.on('click', (e)=>{
@@ -137,6 +151,8 @@ $(() => {
         marker.setLngLat([lon, lat]);
 
     });
+
+
 
     //Get the weather for San Antonio on the page load
     createFiveCards(29.4252, -98.4916)
