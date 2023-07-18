@@ -30,6 +30,33 @@ $(() => {
 
 
 
+    // Marker for the map
+    const marker = createMarker();
+    function createMarker() {
+        getCurrentCity(-98.4916,29.4252);
+        return new mapboxgl.Marker()
+            .setLngLat([-98.4916, 29.4252])
+            .addTo(map);
+    }
+
+
+
+    //Function that shows the current city and state of the marker that was searched for
+    function getCurrentCity(lon, lat) {
+        console.log("inside getCurrentCity")
+        console.log(`lat: ${lat}, lon: ${lon}`)
+        const url = getWeatherURL(lat, lon);
+        console.log(url)
+        $.get(url).done((data) => {
+            console.log(data);
+            const currentCity = data.city.name;
+            console.log(currentCity)
+            $('#current-city').html(currentCity)
+        });
+    }
+
+
+
     // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
     $('#search-button').click(function () {
         performSearch();
@@ -43,13 +70,11 @@ $(() => {
 
     function performSearch() {
         const userInput = $('#search-input').val();
+        const currentCityElem = $('#current-city');
+        currentCityElem.html(userInput)
         geocode(userInput, MAPBOX_PROJECT).then((data) => {
-            const popup = new mapboxgl.Popup();
-            const marker = new mapboxgl.Marker()
-                .setLngLat(data)
-                .setPopup(popup)
-                .addTo(map);
-            popup.addTo(map);
+            const popup = new mapboxgl.Popup()
+            marker.setLngLat(data);
 
             map.flyTo({
                 center: data,
@@ -59,19 +84,6 @@ $(() => {
             });
             getCurrentCity(data[0],data[1]);
             createFiveCards(data[1],data[0]);
-        });
-    }
-
-
-
-    //Function that shows the current city and state of the marker that was searched for
-    function getCurrentCity(lat, lon) {
-        console.log("inside getCurrentCity")
-        console.log(`lat: ${lat}, lon: ${lon}`)
-        const url = getWeatherURL(lat, lon);
-        $.get(url).done((data) => {
-            const currentCity = data.city.name;
-            $('#current-city').html(currentCity)
         });
     }
 
@@ -126,17 +138,6 @@ $(() => {
 
     function filterDailyForecasts(forecast) {
         return forecast.filter((item, index) => index % 8 === 0);
-    }
-
-
-
-    // Marker for the map
-    const marker = createMarker();
-    function createMarker() {
-        return new mapboxgl.Marker()
-            .setLngLat([-98.4916, 29.4252])
-            .addTo(map);
-        getCurrentCity(data[0],data[1]);
     }
 
 

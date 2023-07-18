@@ -1,5 +1,8 @@
 body {
-    background-color: lightgray;
+    background-image: url("../img/weather2.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /*HEADER*/
