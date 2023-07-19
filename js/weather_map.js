@@ -150,6 +150,7 @@ $(() => {
 
         console.log(e.lngLat.lat, e.lngLat.lng);
         marker.setLngLat([lon, lat]);
+        getCurrentCity(lon, lat);
 
     });
 
