@@ -90,7 +90,7 @@ $(() => {
 
 
     // New Function for 5 Cards
-    function createFiveCards(lat, lon) {
+    function createFiveCards(lon, lat) {
         console.log("inside createFiveCards")
         console.log(`lat: ${lat}, lon: ${lon}`)
         $('#cards').html('');
@@ -102,7 +102,7 @@ $(() => {
         getNextFiveDaysWeather(lat, lon);
     }
 
-    function getNextFiveDaysWeather(lat, lon) {
+    function getNextFiveDaysWeather(lon, lat) {
         const url = getWeatherURL(lat, lon);
         console.log(url)
         const forecastArray = [];
@@ -111,7 +111,7 @@ $(() => {
         $.get(url).done((data) => {
             console.log(data);
             const forecast = data.list;
-
+            console.log(forecast)
             forecastArray.push(...filterDailyForecasts(forecast));
 
             forecastArray.forEach((forecastItem, index) => {
