@@ -21,8 +21,8 @@
 
     // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span when the button is clicked
     $('#add-btn').on('click', () => {
-        let sum = parseInt($('#sum-output').text());
         let number = parseInt($('#number').val());
+        let sum = parseInt($('#sum-output').text());
         $('#sum-output').text(sum + number);
     });
 
@@ -30,3 +30,4 @@
 </script>
 
 </body>
+</html>
