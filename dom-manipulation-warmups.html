@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DOM Manipulation Warmups</title>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Warmups</title>
 </head>
 <body>
 
@@ -16,11 +16,15 @@
 <!--  Include the CDN script for jQuery below -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossOrigin="anonymous"></script>
+<script>
+    "use strict";
 
-  "use strict";
-
-  // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span when the button is clicked
-
+    // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span when the button is clicked
+    $('#add-btn').on('click', () => {
+        let sum = parseInt($('#sum-output').text());
+        let number = parseInt($('#number').val());
+        $('#sum-output').text(sum + number);
+    });
 
 
 </script>
