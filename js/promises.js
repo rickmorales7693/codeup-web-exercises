@@ -11,11 +11,11 @@ const userName = (id) => {
     }
     console.log(options);
 
-    return fetch(url, options) // return the entire fetch outside the function
+    return fetch(url, options)
         .then((response)=>{
             return response.json();
         })
-        .catch(error => { // catch any errors that might occur
+        .catch(error => {
             console.log(error.message);
         })
 }
@@ -24,7 +24,7 @@ const userName = (id) => {
 (() => { // IIFE (Immediately Invoked Function Expression)
 
     userName('rickmorales7693').then((user) => {
-
+        console.log(user);
         console.log(user[0].actor.login,  user[0].created_at);
     });
 
