@@ -4,11 +4,32 @@ const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: `Bearer ${MOVIE_PROJECT}`
+        Authorization: `token ${MOVIE_PROJECT}`
     }
 };
 
-fetch('https://api.themoviedb.org/3/authentication', options)
+fetch(url, options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+
+
+
+
+
+
+
+
+(async ()=>{
+
+
+
+
+
+
+
+
+
+
+
+})();
