@@ -3,6 +3,8 @@
     background-image: url("../img/papajohns.webp");
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 li span {
